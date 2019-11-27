@@ -1,0 +1,12 @@
+@startuml
+lunaTerminal -> koko后端: socket.io
+koko后端 -> main主服务:   OnNamespaceConnected（） \n service.GetAsset \n service.GetSystemUser \n 获取资产详情和系统用户
+main主服务 --> koko后端: 资产信息和系统用户
+koko后端 -> 资产: 使用新线程连接资产
+lunaTerminal -> koko后端: 操作命令
+koko后端 -> 资产: 操作命令 OnDataHandler（）
+资产 --> koko后端: 命令结果
+koko后端 --> lunaTerminal: 命令结果
+lunaTerminal -> koko后端: 关闭连接
+koko后端 -> 资产: 断开连接OnLogoutHandler（）
+@enduml
