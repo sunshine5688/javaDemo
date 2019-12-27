@@ -61,12 +61,12 @@ public class RsaPythonDemo {
     }
 
     public static void main(String[] args) throws Exception {
-        String s = "hello world";
+        String s = "{'license_create_datetime':'20191226','copyright':'紫关云技术有限公司 ','asset_max_count':'50','productID':'unicbh',";
         String pubKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDcpr7m19SU0Fa7Dfg7fQ0ueUSRWWDA577VsoSceQtd2whDYlI0I5Q4jZAxfPTZCECaft3eFWyBPn41lRP1GP4kWI/FLdYr3TVMx3kVzeF52IzF34EheuNmRlPCGvQY1RXcsAkFaVwEDUiads4dwxTW6hLVrbecqEnfOKKnCAFbFQIDAQAB";
         // PKCS8格式私钥(可由PKCS1格式转换)
         String priKey = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBANymvubX1JTQVrsN+Dt9DS55RJFZYMDnvtWyhJx5C13bCENiUjQjlDiNkDF89NkIQJp+3d4VbIE+fjWVE/UY/iRYj8Ut1ivdNUzHeRXN4XnYjMXfgSF642ZGU8Ia9BjVFdywCQVpXAQNSJp2zh3DFNbqEtWtt5yoSd84oqcIAVsVAgMBAAECgYA1iuTiIVd9cPzK0T3+OX8cWuLvnk+jH9koA/S3/4tpj//2UgJ+km+iNX/a8mZ7z8vVcZmnDW3SAvcfS3iXTiRE/BPL662NkGytcD+uQTWUNDconJuG/+xdPzDHpOvK9U98msZuD3pTkHwiUW9yJhbEKWGqSvN9hEzEkqUjDAGx4QJBAPpl7V4o6xXZoFovGa0OtMa0E4wzeEnqugqCxfvO2PUcif0aQq/bCPE5hMderXS6gLtQ7/RiyI6uaQbABhHS1nkCQQDhlnQYWYqqw8+iLwul56ApR1qtgxQ7p4GIrpIj0qebKmftbkW2U42FLllybeJI1TB+7RvJLMUqMwXHWygIwzJ9AkEA39/v6WcGQOPx5ZAFEeB7KsloTMrb+qKeMbWYlDntasFYcm5fP2HDzgFSQPradOonHNMRp1wG2uL/TiSziI4MaQJAVU9geBTkq8+BJgREk2kU2Idzc0quzCB8jAP4oDN5zuQqiU+6bUkLq+HrUarceE6nGFjyuRGFPoAtH0cJzMaEwQJADguND6xgOzypE60aizHikdfsnMCJjd7M+opwEeHsMdo6yvLXDlFkBAB4RSH2GvtLqkbhvlfgq5Q9AhZNo+CN4g==";
         String sign = "Xx5mj1RBfwkmA3of3U9Bxt5ttanY4R9Rzk/fe6IyqtT7ZN1On44tWGMFP5NSCNAnEA5jUJMqr9vnjpUH+rXD0tII49IlHiTavHqhZU1MAws+O82FViI56i9j8qCqTodkiX9Qi38u1XQlV1ZyIdelShyL1JRdtGU1V2XL23cUanE=";
-        String m = "hello world";
+        String m = "{'license_create_datetime':'20191226','copyright':'紫关云技术有限公司 ','productID':'unicbh','asset_max_count':'50',";
         String after_sign = sign(s.getBytes(), priKey);
         System.out.println(after_sign);
         boolean ok = verify(m.getBytes(), pubKey, sign);
